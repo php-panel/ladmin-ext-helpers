@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Helpers;
+namespace Ladmin\Helpers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class HelpersServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-admin-helpers');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-admin-helpers');
 
         Helpers::boot();
     }

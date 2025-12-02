@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Helpers\Controllers;
+namespace Ladmin\Helpers\Controllers;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Layout\Content;
 use Exception;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Routing\Controller;
@@ -35,7 +35,7 @@ class TerminalController extends Controller
 
         // If Exception raised.
         if (1 === Artisan::handle(
-            new ArgvInput(explode(' ', 'artisan '.trim($command))),
+            new ArgvInput(explode(' ', 'artisan ' . trim($command))),
             $output = new StringOutput()
         )) {
             return $this->renderException(new Exception($output->getContent()));
@@ -124,7 +124,7 @@ class TerminalController extends Controller
             return $this->execRedisCommand($connection, $query);
         }
 
-        $config = config('database.connections.'.$connection);
+        $config = config('database.connections.' . $connection);
 
         if ($config['driver'] == 'mongodb') {
             return $this->execMongodbQuery($config, $query);
@@ -255,7 +255,7 @@ class StringOutput extends Output
 
     protected function doWrite($message, $newline)
     {
-        $this->output .= $message.($newline ? "\n" : '');
+        $this->output .= $message . ($newline ? "\n" : '');
     }
 
     public function getContent()

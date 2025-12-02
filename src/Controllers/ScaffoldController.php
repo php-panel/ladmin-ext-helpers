@@ -1,12 +1,12 @@
 <?php
 
-namespace Encore\Admin\Helpers\Controllers;
+namespace Ladmin\Helpers\Controllers;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Helpers\Scaffold\ControllerCreator;
-use Encore\Admin\Helpers\Scaffold\MigrationCreator;
-use Encore\Admin\Helpers\Scaffold\ModelCreator;
-use Encore\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Helpers\Scaffold\ControllerCreator;
+use Ladmin\Helpers\Scaffold\MigrationCreator;
+use Ladmin\Helpers\Scaffold\ModelCreator;
+use Ladmin\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
@@ -21,11 +21,39 @@ class ScaffoldController extends Controller
             $content->header('Scaffold');
 
             $dbTypes = [
-                'string', 'integer', 'text', 'float', 'double', 'decimal', 'boolean', 'date', 'time',
-                'dateTime', 'timestamp', 'char', 'mediumText', 'longText', 'tinyInteger', 'smallInteger',
-                'mediumInteger', 'bigInteger', 'unsignedTinyInteger', 'unsignedSmallInteger', 'unsignedMediumInteger',
-                'unsignedInteger', 'unsignedBigInteger', 'enum', 'json', 'jsonb', 'dateTimeTz', 'timeTz',
-                'timestampTz', 'nullableTimestamps', 'binary', 'ipAddress', 'macAddress',
+                'string',
+                'integer',
+                'text',
+                'float',
+                'double',
+                'decimal',
+                'boolean',
+                'date',
+                'time',
+                'dateTime',
+                'timestamp',
+                'char',
+                'mediumText',
+                'longText',
+                'tinyInteger',
+                'smallInteger',
+                'mediumInteger',
+                'bigInteger',
+                'unsignedTinyInteger',
+                'unsignedSmallInteger',
+                'unsignedMediumInteger',
+                'unsignedInteger',
+                'unsignedBigInteger',
+                'enum',
+                'json',
+                'jsonb',
+                'dateTimeTz',
+                'timeTz',
+                'timestampTz',
+                'nullableTimestamps',
+                'binary',
+                'ipAddress',
+                'macAddress',
             ];
 
             $action = URL::current();
@@ -60,7 +88,7 @@ class ScaffoldController extends Controller
 
             // 3. Create migration.
             if (in_array('migration', $request->get('create'))) {
-                $migrationName = 'create_'.$request->get('table_name').'_table';
+                $migrationName = 'create_' . $request->get('table_name') . '_table';
 
                 $paths['migration'] = (new MigrationCreator(app('files')))->buildBluePrint(
                     $request->get('fields'),
@@ -101,7 +129,7 @@ class ScaffoldController extends Controller
         $messages = [];
 
         foreach ($paths as $name => $path) {
-            $messages[] = ucfirst($name).": $path";
+            $messages[] = ucfirst($name) . ": $path";
         }
 
         $messages[] = "<br />$message";

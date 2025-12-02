@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Helpers\Scaffold;
+namespace Ladmin\Helpers\Scaffold;
 
 use Illuminate\Database\Migrations\MigrationCreator as BaseMigrationCreator;
 use Illuminate\Filesystem\Filesystem;
@@ -34,7 +34,7 @@ class MigrationCreator extends BaseMigrationCreator
 
         $path = $this->getPath($name, $path);
 
-        $stub = $this->files->get(__DIR__.'/stubs/create.stub');
+        $stub = $this->files->get(__DIR__ . '/stubs/create.stub');
 
         $this->files->put($path, $this->populateStub($name, $stub, $table));
 
@@ -104,7 +104,7 @@ class MigrationCreator extends BaseMigrationCreator
                 $column .= '->nullable()';
             }
 
-            $rows[] = $column.";\n";
+            $rows[] = $column . ";\n";
         }
 
         if ($useTimestamps) {

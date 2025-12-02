@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Helpers\Scaffold;
+namespace Ladmin\Helpers\Scaffold;
 
 class ControllerCreator
 {
@@ -107,7 +107,7 @@ class ControllerCreator
      */
     protected function replaceClass($stub, $name)
     {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        $class = str_replace($this->getNamespace($name) . '\\', '', $name);
 
         return str_replace(['DummyClass', 'DummyNamespace'], [$class, $this->getNamespace($name)], $stub);
     }
@@ -125,7 +125,7 @@ class ControllerCreator
 
         array_shift($segments);
 
-        return app_path(implode('/', $segments)).'.php';
+        return app_path(implode('/', $segments)) . '.php';
     }
 
     /**
@@ -135,7 +135,7 @@ class ControllerCreator
      */
     public function getStub()
     {
-        return __DIR__.'/stubs/controller.stub';
+        return __DIR__ . '/stubs/controller.stub';
     }
 
     public function generateFormField($fields = [])

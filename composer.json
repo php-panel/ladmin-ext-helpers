@@ -1,32 +1,36 @@
 {
-    "name": "laravel-admin-ext/helpers",
+    "name": "php-panel/ladmin-ext-helpers",
     "description": "Helpers extension for laravel-admin",
     "type": "library",
-    "keywords": ["laravel-admin", "helpers"],
-    "homepage": "https://github.com/laravel-admin-extensions/helpers",
+    "keywords": [
+        "laravel-admin",
+        "helpers"
+    ],
+    "homepage": "https://github.com/php-panel/ladmin-ext-helpers",
     "license": "MIT",
     "authors": [
         {
-            "name": "z-song",
-            "email": "zosong@126.com"
+            "name": "leeqvip",
+            "email": "leeqvip@gmail.com"
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "encore/laravel-admin": "~1.6"
+        "php": ">=8.2",
+        "laravel/framework": ">=12.0",
+        "php-panel/laravel-admin": ">=3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~6.0"
+        "phpunit/phpunit": "~11.0"
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Admin\\Helpers\\": "src/"
+            "Ladmin\\Helpers\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Admin\\Helpers\\HelpersServiceProvider"
+                "Ladmin\\Helpers\\HelpersServiceProvider"
             ]
         }
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Helpers\Controllers;
+namespace Ladmin\Helpers\Controllers;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Grid;
+use Ladmin\Layout\Content;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Controller;
 use Illuminate\Routing\Route;
@@ -26,7 +26,7 @@ class RouteController extends Controller
                     'PUT'    => 'yellow',
                     'DELETE' => 'red',
                     'PATCH'  => 'aqua',
-                    'OPTIONS'=> 'light-blue',
+                    'OPTIONS' => 'light-blue',
                 ];
 
                 $grid->method()->map(function ($method) use ($colors) {

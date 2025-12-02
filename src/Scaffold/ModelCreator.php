@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Helpers\Scaffold;
+namespace Ladmin\Helpers\Scaffold;
 
 use Illuminate\Support\Str;
 
@@ -90,7 +90,7 @@ class ModelCreator
 
         array_shift($segments);
 
-        return app_path(implode('/', $segments)).'.php';
+        return app_path(implode('/', $segments)) . '.php';
     }
 
     /**
@@ -115,7 +115,7 @@ class ModelCreator
      */
     protected function replaceClass(&$stub, $name)
     {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        $class = str_replace($this->getNamespace($name) . '\\', '', $name);
 
         $stub = str_replace('DummyClass', $class, $stub);
 
@@ -133,7 +133,9 @@ class ModelCreator
     protected function replaceNamespace(&$stub, $name)
     {
         $stub = str_replace(
-            'DummyNamespace', $this->getNamespace($name), $stub
+            'DummyNamespace',
+            $this->getNamespace($name),
+            $stub
         );
 
         return $this;
@@ -188,7 +190,7 @@ class ModelCreator
      */
     protected function replaceTable(&$stub, $name)
     {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        $class = str_replace($this->getNamespace($name) . '\\', '', $name);
 
         $table = Str::plural(strtolower($class)) !== $this->tableName ? "protected \$table = '$this->tableName';\n" : '';
 
@@ -233,6 +235,6 @@ class ModelCreator
      */
     public function getStub()
     {
-        return __DIR__.'/stubs/model.stub';
+        return __DIR__ . '/stubs/model.stub';
     }
 }

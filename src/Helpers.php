@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Helpers;
+namespace Ladmin\Helpers;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Auth\Database\Menu;
-use Encore\Admin\Extension;
+use Ladmin\Admin;
+use Ladmin\Auth\Database\Menu;
+use Ladmin\Extension;
 
 class Helpers extends Extension
 {
