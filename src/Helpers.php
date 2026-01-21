@@ -29,13 +29,13 @@ class Helpers extends Extension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('helpers/terminal/database', 'Encore\Admin\Helpers\Controllers\TerminalController@database');
-            $router->post('helpers/terminal/database', 'Encore\Admin\Helpers\Controllers\TerminalController@runDatabase');
-            $router->get('helpers/terminal/artisan', 'Encore\Admin\Helpers\Controllers\TerminalController@artisan');
-            $router->post('helpers/terminal/artisan', 'Encore\Admin\Helpers\Controllers\TerminalController@runArtisan');
-            $router->get('helpers/scaffold', 'Encore\Admin\Helpers\Controllers\ScaffoldController@index');
-            $router->post('helpers/scaffold', 'Encore\Admin\Helpers\Controllers\ScaffoldController@store');
-            $router->get('helpers/routes', 'Encore\Admin\Helpers\Controllers\RouteController@index');
+            $router->get('helpers/terminal/database', 'Ladmin\Helpers\Controllers\TerminalController@database');
+            $router->post('helpers/terminal/database', 'Ladmin\Helpers\Controllers\TerminalController@runDatabase');
+            $router->get('helpers/terminal/artisan', 'Ladmin\Helpers\Controllers\TerminalController@artisan');
+            $router->post('helpers/terminal/artisan', 'Ladmin\Helpers\Controllers\TerminalController@runArtisan');
+            $router->get('helpers/scaffold', 'Ladmin\Helpers\Controllers\ScaffoldController@index');
+            $router->post('helpers/scaffold', 'Ladmin\Helpers\Controllers\ScaffoldController@store');
+            $router->get('helpers/routes', 'Ladmin\Helpers\Controllers\RouteController@index');
         });
     }
 
